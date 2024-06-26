@@ -28,51 +28,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "game": {
-        "title": "Flappy Bird",
-        "version": "1.0.0",
-        "developer": "YourGameStudio"
-    },
-    "settings": {
-        "difficulty": "normal",
-        "sound": {
-            "musicVolume": 0.5,
-            "effectsVolume": 0.7
-        },
-        "graphics": {
-            "resolution": {
-                "width": 800,
-                "height": 600
-            },
-            "fullscreen": false
-        }
-    },
-    "player": {
-        "initialLives": 3,
-        "highScore": 0,
-        "controls": {
-            "jump": "Space",
-            "pause": "KeyP"
-        }
-    },
-    "levels": [
-        {
-            "id": 1,
-            "name": "Level 1",
-            "background": "day",
-            "pipes": {
-                "speed": 2,
-                "gapHeight": 150
-            }
-        }
-    ],
-    "assets": {
-        "images": {
-            "bird": "/img/icon-192x192.png",
-            "pipe": "/img/icon-256x256.png",
-            "backgroundDay": "/img/icon-384x384.png",
-            "backgroundNight": "/img/icon-512x512.png"
-        }
-    }
+    ]
 }
