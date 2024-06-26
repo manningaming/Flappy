@@ -1,11 +1,11 @@
    {
-    "theme_color": "#f69435",
-    "background_color": "#f69435",
+    "theme_color": "#880080",
+    "background_color": "#880080",
     "display": "standalone",
     "scope": "/",
     "start_url": "./index.html",
-    "name": "PingPong",
-    "short_name": "PingPong",
+    "name": "FlappyBird",
+    "short_name": "FlappyBird",
     "description": "Geschicklichkeitsspiel",
     "icons": [
         {
