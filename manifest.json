@@ -39,10 +39,10 @@
   ],
   "assets": {
     "images": {
-      "bird": "/img/bird.png",
-      "pipe": "/img/pipe.png",
-      "backgroundDay": "/img/background_day.png",
-      "backgroundNight": "/img/background_night.png"
+      "bird": "/img/icon-192x192.png",
+      "pipe": "/img/icon-256x256.png",
+      "backgroundDay": "/img/icon-384x384.png",
+      "backgroundNight": "/img/icon-512x512.png"
     }
   }
 }
