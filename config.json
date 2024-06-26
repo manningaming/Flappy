@@ -1,0 +1,58 @@
+{
+  "game": {
+    "title": "Flappy Bird",
+    "version": "1.0.0",
+    "developer": "DaddyMaster69"
+  },
+  "settings": {
+    "difficulty": "normal",
+    "sound": {
+      "musicVolume": 0.5,
+      "effectsVolume": 0.7
+    },
+    "graphics": {
+      "resolution": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullscreen": true
+    }
+  },
+  "player": {
+    "initialLives": 3,
+    "highScore": 0,
+    "controls": {
+      "jump": "space",
+      "pause": "p"
+    }
+  },
+  "levels": [
+    {
+      "id": 1,
+      "name": "Level 1",
+      "background": "day",
+      "pipes": {
+        "speed": 2,
+        "gapHeight": 150
+      }
+    },
+    {
+      "id": 2,
+      "name": "Level 2",
+      "background": "night",
+      "pipes": {
+        "speed": 3,
+        "gapHeight": 140
+      }
+    }
+  ],
+  "assets": {
+    "images": {
+      "bird": "img/bird.png",
+      "pipe": "img/pipe.png",
+      "backgroundDay": "img/background_day.png",
+      "backgroundNight": "img/background_night.png"
+    },
+  
+  }
+}
