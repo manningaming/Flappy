@@ -22,7 +22,7 @@
     <canvas id="gameCanvas"></canvas>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('manifest-FlappyBird.json')
+            fetch('config.json')
                 .then(response => response.json())
                 .then(config => {
                     initializeGame(config);
@@ -50,7 +50,7 @@
                 let score = 0;
 
                 document.addEventListener('keydown', function(event) {
-                    if (event.code === config.player.controls.jump.toUpperCase()) {
+                    if (event.code === config.player.controls.jump) {
                         bird.velocity = bird.lift;
                     }
                 });
