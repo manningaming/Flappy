@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8 />
-<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta charset="utf-8">
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="application-name" content="FlappyBird">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -12,11 +12,15 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/icon/icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<link rel='manifest' href='manifest.json'>
+<link rel="manifest" href="manifest.json">
 <title>Flappy Bird</title>
+<style>
+  body { margin: 0; overflow: hidden; }
+  canvas { display: block; }
+</style>
 </head>
 <body>
-<canvas id="MeinCanvas" width="400" height="600"></canvas>
+<canvas id="MeinCanvas"></canvas>
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -25,13 +29,16 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-document.body.style.overflow = 'hidden';
-
 var canvas = document.getElementById("MeinCanvas");
 var context = canvas.getContext('2d');
 
-canvas.width = document.documentElement.clientWidth;
-canvas.height = document.documentElement.clientHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
 var WIDTH = canvas.width;
 var HEIGHT = canvas.height;
