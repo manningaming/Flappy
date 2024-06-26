@@ -1,9 +1,13 @@
-const staticAssets = [ 
+const cacheName = 'flappy-bird-cache';
+const staticAssets = [
   './',
   './index.html',
-  './config.json',
-  './service-worker.js'
-  
+  './manifest.json',
+  './service-worker.js',
+  './img/icon-192x192.png',
+  './img/icon-256x256.png',
+  './img/icon-384x384.png',
+  './img/icon-512x512.png'
 ];
 
 self.addEventListener('install', async e => {
@@ -19,27 +23,27 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', async e => {
   const req = e.request;
   const url = new URL(req.url);
-  
-  if(url.origin === location.origin){
+
+  if (url.origin === location.origin) {
     e.respondWith(cacheFirst(req));
-  }else{
+  } else {
     e.respondWith(networkAndCache(req));
   }
 });
 
-async function cacheFirst(req){
+async function cacheFirst(req) {
   const cache = await caches.open(cacheName);
   const cached = await cache.match(req);
   return cached || fetch(req);
 }
 
-async function networkAndCache(req){
+async function networkAndCache(req) {
   const cache = await caches.open(cacheName);
-  try{
+  try {
     const fresh = await fetch(req);
     await cache.put(req, fresh.clone());
     return fresh;
-  }catch(e){
+  } catch (e) {
     const cached = await cache.match(req);
     return cached;
   }
