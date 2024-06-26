@@ -8,8 +8,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="FlappyBird">
-<link rel="apple-touch-icon" sizes="192x192" href="/img/icon-192x192.png">
+<link rel="apple-touch-icon" sizes="192x192" href="/icon/icon-192x192.png">
 <meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/icon/icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 <link rel="manifest" href="manifest.json">
 <title>Flappy Bird</title>
@@ -23,9 +24,8 @@
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('./service-worker.js').then(() => {
-      console.log("Service Worker registered");
-    });
+    navigator.serviceWorker.register('./service-worker.js');
+    console.log("Service Worker registered");  
   });
 }
 
@@ -172,3 +172,53 @@ draw();
 </script>
 </body>
 </html>
+
+manifest.json:
+    {
+  "game": {
+    "title": "Flappy Bird",
+    "version": "1.0.0",
+    "developer": "YourGameStudio"
+  },
+  "settings": {
+    "difficulty": "normal",
+    "sound": {
+      "musicVolume": 0.5,
+      "effectsVolume": 0.7
+    },
+    "graphics": {
+      "resolution": {
+        "width": 800,
+        "height": 600
+      },
+      "fullscreen": false
+    }
+  },
+  "player": {
+    "initialLives": 3,
+    "highScore": 0,
+    "controls": {
+      "jump": "Space",
+      "pause": "KeyP"
+    }
+  },
+  "levels": [
+    {
+      "id": 1,
+      "name": "Level 1",
+      "background": "day",
+      "pipes": {
+        "speed": 2,
+        "gapHeight": 150
+      }
+    }
+  ],
+  "assets": {
+    "images": {
+      "bird": "/img/bird.png",
+      "pipe": "/img/pipe.png",
+      "backgroundDay": "/img/background_day.png",
+      "backgroundNight": "/img/background_night.png"
+    }
+  }
+}
